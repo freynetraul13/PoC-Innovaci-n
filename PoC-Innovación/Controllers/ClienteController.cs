@@ -26,18 +26,11 @@ namespace PoC_Innovación.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<CreditoController>/5
-        [HttpGet("{id}")]
-        public ClienteDTO Get(int id)
-        {
-            return _clienteService.ObtenerCliente(id);
-        }
 
         // POST api/<CreditoController>
         [HttpPost]
         public void Post([FromBody] ClienteDTO cliente)
-        {
-            _clienteService.CrearCliente(cliente);
+        {           
         }
 
         // PUT api/<CreditoController>/5

@@ -22,18 +22,13 @@ namespace PoC_Innovación.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<CreditoController>/5
-        [HttpGet("{id}")]
-        public ComercioDto Get(int id)
-        {
-            return ComercioService.ObtenerComercio(id);
-        }
+
 
         // POST api/<CreditoController>
         [HttpPost]
         public void Post([FromBody] ComercioDto comercio)
         {
-            ComercioService.CrearComercio(comercio);
+            
         }
 
         // PUT api/<CreditoController>/5

@@ -21,13 +21,6 @@ namespace PoC_Innovación.Controllers
         {
             return new string[] { "value1", "value2" };
         }
-
-        [HttpGet("GetCreditoList/{idCliente}")]
-        public IEnumerable<CreditoDto> GetCreditoList(int idCliente)
-        {
-            return _creditoService.GetCreditoList(idCliente);
-        }
-
         
         // GET api/<CreditoController>/5
         [HttpGet("{id}")]
@@ -38,18 +31,9 @@ namespace PoC_Innovación.Controllers
 
         // POST api/<CreditoController>
         [HttpPost]
-        public IActionResult Post([FromBody] CreditoDto creditoDto)
+        public void Post([FromBody] CreditoDto creditoDto)
         {
-            try
-            {
-               _creditoService.RealizarCredito(creditoDto);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message}");
-            }
-          
+        
         }
 
         // PUT api/<CreditoController>/5
